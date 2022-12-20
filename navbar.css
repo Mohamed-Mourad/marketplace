@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Playfair+Display&display=swap');
+
+nav
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul
+{
+    float:right;
+    display: flex;
+    align-items: right;
+    position: absolute;
+    right: 5px;
+}
+
+nav ul li
+{
+    width: 100px;
+    text-align: center;
+    list-style-type: none;
+    display: inline-block;
+}
+
+nav ul li a
+{
+    font-size: 18px;
+    color: #F5F5F5;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+}
+
+nav ul li a:hover
+{
+    color:#FFFFFF;
+    display:inline-block;
+    transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2); 
+    -webkit-transform: scale(1.2, 1.2);
+}

@@ -1,0 +1,172 @@
+* {
+    margin: 0
+  }
+
+body {
+    box-sizing: border-box;  
+    background-color: #F5F5F5;
+    background-image: url(productImages/dalle.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+input[type="radio"]
+{
+    margin: 10px 10px 0 10px;
+    display:inline-block; 
+}
+
+.form-element {
+    display: block;
+    width: 100%;
+    color: black;
+    margin-top: 15px;
+}
+
+.sign {
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 14px;
+}
+
+.signa {
+    color: rgb(28, 80, 200);
+    text-decoration: none;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80%;
+    margin-top: 20px;
+}
+
+.regContainer {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    padding-top: 20px;
+}
+
+.regContainer h1 {
+    color: white;
+    background-color: rgba(238, 236, 247, 0.4);
+    font-family: sans-serif;
+    text-align: left;
+    margin-top: 120px;
+    padding-top: 15px;
+    padding-left: 15px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-bottom: 0;
+}
+
+.regContainer p {
+    color: white;
+    background-color: rgba(238, 236, 247, 0.4);
+    font-family: sans-serif;
+    margin: 0px;
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+}
+
+.registartion-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    font-size: 18px;
+    font-family: sans-serif;
+    color: rgb(255, 255, 255);
+    background-color: rgb(238, 236, 247);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.up {
+    width: 84%;
+}
+
+.form-grid-container-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+}
+
+.form-grid-container-rows {
+    display: grid;
+    grid-template-rows: auto;
+    grid-gap: 5px;
+}
+
+.form-grid-row {
+    width: 100%;
+}
+
+.instead {
+    text-align: center;
+}
+
+.registartion-form input::placeholder {
+    font-size: smaller;
+}
+
+.registartion-form input,
+.registartion-form select,
+.registartion-form textarea {
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 5px;
+    font-family: sans-serif;
+}
+
+.registartion-form input[type="text"],
+.registartion-form input[type="email"],
+.registartion-form input[type="tel"],
+.registartion-form input[type="file"],
+.registartion-form input[type="password"] {
+    height: 30px;
+}
+
+.registartion-form input[type="radio"]
+{
+    width: max-content;
+}
+
+.registartion-form input:focus,
+.registartion-form textarea:focus {
+    box-shadow: 3px 3px 10px rgb(228, 228, 228), -3px -3px 10px rgb(224, 224, 224);
+    outline-color: rgb(28, 80, 200);
+    
+}
+
+.registartion-form .submit {
+    width: 100%;
+    padding: 8px 0;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(96, 177, 45);
+    border-radius: 5px;
+}
+
+.registartion-form .submit:hover {
+    box-shadow: 0px 3px 6px rgb(255, 255, 255);
+}

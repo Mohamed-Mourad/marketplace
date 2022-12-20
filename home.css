@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DM+Serif+Display&family=Playfair+Display&display=swap');
+
+body
+{
+    margin: 0px;
+    box-sizing: border-box;  
+    background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar {
+    width: 0.3rem;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #302F53;
+}
+
+html
+{
+    scroll-behavior: smooth;
+}
+
+.header
+{
+    width: 100%;
+    height: 100vh;
+    background-size: 100%;
+    padding: 20px 0px 0px;
+    background-position: center;
+    background-image: url('productImages/dalle.jpg');
+}
+
+nav
+{
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul
+{
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+nav ul li
+{
+    width: 100px;
+    text-align: center;
+    list-style-type: none;
+    display: inline-block;
+}
+
+nav ul li a
+{
+    font-size: 18px;
+    color: #F5F5F5;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+}
+
+nav ul li a:hover
+{
+    color:#FFFFFF;
+    display:inline-block;
+    transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2); 
+    -webkit-transform: scale(1.2, 1.2);
+}
+
+#slogan h1
+{
+    font-size: 60px;
+    color:#F5F5F5;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 0px;
+    letter-spacing: 3px;
+    font-family: 'Abril Fatface', cursive;
+}
+
+#slogan h3
+{
+    font-size: 25px;
+    margin-top: 10px;
+    color:#F5F5F5;
+    text-align: center;
+    letter-spacing: 2px;
+    font-family: 'Playfair Display', serif;
+}
+
+#explore
+{
+    font-size: 20px;
+    color: #F5F5F5;
+    margin-top: 290px;
+    text-align: center;
+}
+
+#explore p, #explore i
+{
+    color: #F5F5F5;
+    margin-bottom: 10px;
+    text-shadow: #F5F5F5 4px 0 10px;
+}
+
+#explore p
+{
+    font-family: 'Playfair Display', serif;
+}
+
+a
+{
+    text-decoration: none;
+}
+
+section
+{
+    margin: 0px 50px 0px;
+}
+
+section h1
+{
+    color:#000000;
+    font-size: 40px;
+    padding-top: 10px;
+    letter-spacing: 3px;
+    padding-bottom: 10px;
+    font-family: 'Abril Fatface', cursive;
+}
+
+.card
+{
+    width: 30%;
+    float: left;
+    height: 75%;
+    border:#aaa;
+    margin-bottom: 32px;
+    margin-left: 32px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+.card:hover
+{
+    transform: translateY(-10px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+.image
+{
+    padding-top: 10px;
+    height: 55%;
+}
+
+img 
+{
+    width: 100%;
+    height: 100%; 
+    object-fit: contain;
+}
+
+.details
+{
+    width: auto;
+    height: 30%;
+    margin: 0px 10px 0px 10px;
+    display: inline-block;
+    padding: 0px 10px 0px 10px;
+    font-family: 'Playfair Display', serif;
+}
+ 
+.details h3
+{
+    font-size: medium;
+    margin-bottom: 5px;
+    padding-top: 10px;
+    display:inline-block;
+}
+
+.details h5
+{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+}
+
+.details p
+{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 5px;
+    color: #aaa;
+    font-size: 14px;
+	line-height: 1.4;
+}
+
+.stockBuy
+{
+    width: 90%;
+    margin-left: 20px;
+    margin-right: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.stockBuy h5
+{
+    display: inline-block;
+    font-family: 'Playfair Display', serif;
+}
+
+.button 
+{
+    margin-top: 10px;
+    float: right;
+}
+
+.button a 
+{
+    font-size: 13px;
+    color: #FFFFFF;   
+    padding: 10px 15px;
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid #FFFFFF;
+    background-color: #2A59A0;
+    font-family: 'Playfair Display', serif;
+}
+
+.button a:nth-of-type(1) 
+{
+    border-right: none;
+	border-radius: 10px 0 0 10px;
+}
+
+.button a:nth-of-type(2) 
+{
+	border-radius: 0px 10px 10px 0;
+}
