@@ -16,10 +16,9 @@
     function generateAddProduct()
     {
         echo "<body>";
-            
-            echo "<div class=header>";
-
             generateNavbar();
+
+            echo "<div class=header>";
 
             echo "<div class=container>";
 

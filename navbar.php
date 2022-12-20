@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <style>
     <?php include 'navbar.css'; ?>
 </style>
@@ -7,8 +11,6 @@
     echo "<head>";
         echo "<link href=https://fonts.googleapis.com/icon?family=Material+Icons rel=stylesheet>";
     echo "</head>";
-
-    generateNavbar();
     
     function generateNavbar()
     {
@@ -16,8 +18,28 @@
             echo "<ul>";
                 echo "<li><a href=home.php>Home</a></li>";
                 echo "<li><a href=search.php>Search</a></li>";
-                echo "<li><a href=login.php>Login</a></li>";
-                echo "<li><a href=profile.php><i class=material-icons>&#xe7ff;</i></a></li>";
+
+                if(isset($_SESSION['user_id']))
+                {
+                    $uid = $_SESSION['user_id'];
+                    echo "<li><a href=logout.php>Logout</a></li>";
+
+                    $connection = mysqli_connect("localhost", "root", "12345678", "marketplace");
+        
+                    $getProfilePicture = mysqli_query($connection, "Select * from customers where user_id=$uid");
+                    $user = mysqli_fetch_array($getProfilePicture);
+
+                    echo "<li><a href=profile.php><i class=material-icons>&#xe7ff;</i></a></li>";   
+                    // echo "<div class=profilePicture>";
+                    //     echo "<li><img src='uploads/$user[profile_picture]' class=profilePicture></li>";
+                    // echo "</div>";
+                    mysqli_close($connection);
+                }
+                else
+                {
+                    echo "<li><a href=login.php>Login</a></li>";
+                    echo "<li><a href=profile.php><i class=material-icons>&#xe7ff;</i></a></li>";   
+                }
             echo "</ul>";
         echo "</nav>";
     }

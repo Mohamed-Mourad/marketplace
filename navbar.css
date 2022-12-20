@@ -9,12 +9,21 @@ nav
 
 nav ul
 {
+    right: 2rem;
     float:right;
     display: flex;
     align-items: right;
     position: absolute;
-    right: 5px;
 }
+
+
+.profilePicture
+{
+    overflow: hidden; 
+    border-radius: 50%; 
+    position: relative; 
+    display: inline-block; 
+} 
 
 nav ul li
 {

@@ -8,12 +8,14 @@ body
     background-color: #F5F5F5;
 }
 
-body::-webkit-scrollbar {
-    width: 0.3rem;
+body::-webkit-scrollbar
+{
+    width: 0.5rem;
 }
 
-body::-webkit-scrollbar-thumb {
-    background: #302F53;
+body::-webkit-scrollbar-thumb
+{
+    background: #2A59A0;
 }
 
 html
@@ -31,53 +33,12 @@ html
     background-image: url('productImages/dalle.jpg');
 }
 
-nav
-{
-    float: right;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-nav ul
-{
-    display: flex;
-    align-items: center; 
-    justify-content: center;
-}
-
-nav ul li
-{
-    width: 100px;
-    text-align: center;
-    list-style-type: none;
-    display: inline-block;
-}
-
-nav ul li a
-{
-    font-size: 18px;
-    color: #F5F5F5;
-    font-weight: bold;
-    text-decoration: none;
-    font-family: 'Playfair Display', serif;
-}
-
-nav ul li a:hover
-{
-    color:#FFFFFF;
-    display:inline-block;
-    transform: scale(1.2, 1.2);
-    -ms-transform: scale(1.2, 1.2); 
-    -webkit-transform: scale(1.2, 1.2);
-}
-
 #slogan h1
 {
     font-size: 60px;
     color:#F5F5F5;
-    text-align: center;
     margin-top: 100px;
+    text-align: center;
     margin-bottom: 0px;
     letter-spacing: 3px;
     font-family: 'Abril Fatface', cursive;
@@ -139,8 +100,8 @@ section h1
     float: left;
     height: 75%;
     border:#aaa;
-    margin-bottom: 32px;
     margin-left: 32px;
+    margin-bottom: 32px;
     border-radius: 10px;
     background-color: #FFFFFF;
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);

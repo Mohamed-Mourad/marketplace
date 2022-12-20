@@ -12,8 +12,11 @@
     echo "<head>";
     echo "<title>Log In</title>";
     echo "</head>";
-    
+
     echo "<body>";
+        
+        generateNavbar();
+
         echo "<div class=container>";
             echo "<div class=regContainer>";
                 echo "<h1>Log In</h1>";
@@ -75,6 +78,7 @@
         if($numReturnedRows > 0 & $user["passw"] == $password){
             $uid = $user["user_id"];
             $_SESSION['user_id'] = $uid;
+            $_SESSION['user_type'] = $userType;
             echo "<script>window.location.href='home.php';</script>";
             exit;
         }elseif($numReturnedRows > 0 & $user["passw"] != $password){

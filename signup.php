@@ -14,6 +14,9 @@
     echo "</head>";
 
     echo "<body>";
+
+        generateNavbar();
+
         echo "<div class=container>";
             echo "<div class='regContainer up'>";
                 echo "<h1>Sign Up</h1>";
