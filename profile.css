@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Playfair+Display&display=swap');
+
+body
+{
+    margin: 0px;
+    background-size: 100%;
+    padding: 20px 0px 0px;  
+    box-sizing: border-box;
+    background-color: #F5F5F5;
+    background-position: center;
+    background-image: url('productImages/dalle.jpg');
+}
+
+html
+{
+    scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar
+{
+    width: 0.5rem;
+}
+
+body::-webkit-scrollbar-thumb
+{
+    background: #2A59A0;
+}

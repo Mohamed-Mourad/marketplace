@@ -17,20 +17,38 @@ nav ul
 }
 
 
-.profilePicture
+/* .profilePicture
 {
     overflow: hidden; 
     border-radius: 50%; 
     position: relative; 
     display: inline-block; 
+} */
+
+.profilePicture 
+{ 
+    position: relative;
+    top: -10px;
+    width: 50px; 
+    height: 50px;
+    overflow: hidden; 
 } 
+
+.profilePicture img 
+{  
+    width: 50px; 
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
 
 nav ul li
 {
-    width: 100px;
+    width: max-content;
     text-align: center;
     list-style-type: none;
     display: inline-block;
+    margin-right: 1rem;
 }
 
 nav ul li a

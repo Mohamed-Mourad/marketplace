@@ -1,11 +1,13 @@
+<?php
+    session_start();
+?>
+
 <style>
     <?php include 'addProduct.css'; ?>
     <?php include 'navbar.php'; ?>
 </style>
 
 <?php
-
-    session_start();
 
     echo "<head>";
         echo "<link href=https://fonts.googleapis.com/icon?family=Material+Icons rel=stylesheet>";

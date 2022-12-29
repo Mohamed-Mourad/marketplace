@@ -7,10 +7,8 @@
 
 <?php
 
-    session_start();
-
     echo "<head>";
-    echo "<title>Sign Up</title>";
+        echo "<title>Sign Up</title>";
     echo "</head>";
 
     echo "<body>";
@@ -111,7 +109,7 @@
                             echo "<input type=submit class=submit name=submit id=sbmt value=Signup>";
                         echo "</div>";
                         echo "<div class='form-element instead'>";
-                            echo "<h3>Don't have an account? <a class=signa href=login.php>Login</a> instead</h3>";
+                            echo "<h3>Have an account? <a class=signa href=login.php>Login</a> instead</h3>";
                         echo "</div>";
                     echo "</div>";
                 echo "</div>";

@@ -21,7 +21,15 @@
 
             echo "<div class=header>";
                 
-                generateNavbar();
+                if(isset($_SESSION['user_type'])){
+                    if($_SESSION['user_type'] == "Market"){
+                        generateMarketNavbar();
+                    }else{
+                        generateNavbar();
+                    }
+                }else{
+                    generateNavbar();
+                }
 
                 echo "<div id=slogan>";
                     echo "<h1>CompHive.</h2>";
