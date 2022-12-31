@@ -29,58 +29,59 @@
 
                     echo "<h1>Checkout.</h1>";
 
-                    $con=mysqli_connect("localhost", "root" , "12345678", "marketplace");
-
-                    foreach($_COOKIE as $key => $value)
+                    if((isset($_SESSION['user_id'])))
                     {
-                        if($value == "productID")
+                        $con=mysqli_connect("localhost", "root" , "12345678", "marketplace");
+
+                        foreach($_COOKIE as $key => $value)
                         {
-                            $inCart=mysqli_query($con, "select * from products where ProductID='$key'");
-                            while($row=mysqli_fetch_assoc($inCart))
+                            if($value == "productID")
                             {
-                                $name=$row["Name"];
-                                $image=$row["Image"];
-                                $brand=$row["Brand"];
-                                $marketId=$row["MarketId"];
-                                $price=$row["Price"];
-                                $stock=$row["InStock"];
+                                $inCart=mysqli_query($con, "select * from products where ProductID='$key'");
+                                while($row=mysqli_fetch_assoc($inCart))
+                                {
+                                    $name=$row["Name"];
+                                    $image=$row["Image"];
+                                    $brand=$row["Brand"];
+                                    $marketId=$row["MarketId"];
+                                    $price=$row["Price"];
+                                    $stock=$row["InStock"];
 
-                                $loggedUser = $_SESSION["user_id"];
+                                    $loggedUser = $_SESSION["user_id"];
 
-                                echo "<div class=shoppingCart>";
+                                    echo "<div class=shoppingCart>";
 
-                                    echo "<div class=item id=item>";
+                                        echo "<div class=item id=item>";
 
-                                        echo "<div class=delete>";
-                                            echo "<button class=deleteButton onclick=remove($key)><i class=material-icons>&#xe872;</i></button>";
-                                        echo "</div>";
-                                
-                                        echo "<div class=image>";
-                                            echo "<img src='productImages/$image'>";
-                                        echo "</div>";
-                                
-                                        echo "<div class=description>";
-                                            echo "<span>$name</span>";
-                                            echo "<span>Brand: $brand</span>";
-                                        echo "</div>";
-                                
-                                        echo "<div class=quantity>";
-                                            echo "<span>$$price</span>";
-                                            // echo "<button class=add name=button><i class='fas'>&#xf067;</i></button>";
-                                            // echo "<input type=text id=currentQtty name=name value=1>";
-                                            // echo "<button class=subtract name=button><i class='fas'>&#xf068;</i></button>";
+                                            echo "<div class=delete>";
+                                                echo "<button class=deleteButton onclick=remove($key)><i class=material-icons>&#xe872;</i></button>";
+                                            echo "</div>";
+                                    
+                                            echo "<div class=image>";
+                                                echo "<img src='productImages/$image'>";
+                                            echo "</div>";
+                                    
+                                            echo "<div class=description>";
+                                                echo "<span>$name</span>";
+                                                echo "<span>Brand: $brand</span>";
+                                            echo "</div>";
+                                    
+                                            echo "<div class=quantity>";
+                                                echo "<span>$$price</span>";
+                                                // echo "<button class=add name=button><i class='fas'>&#xf067;</i></button>";
+                                                // echo "<input type=text id=currentQtty name=name value=1>";
+                                                // echo "<button class=subtract name=button><i class='fas'>&#xf068;</i></button>";
+                                            echo "</div>";
                                         echo "</div>";
                                     echo "</div>";
-                                echo "</div>";
+                                }
                             }
                         }
+                        echo "<a href=checkout.php><button class=checkout>Check Out</button></a>";
+                        echo "<a href=purchaseHistory.php><button class=purchaseHistory>Previous Orders</button></a>";
                     }
-                    echo "<a href=checkout.php>";
-                        echo "<button class=checkout>Check Out</button>";
-                    echo "</a>";
-                    echo "<a href=purchaseHistory.php>";
-                    echo "<button class=purchaseHistory>Previous Orders</button>";
-                echo "</a>";
+                    else
+                        echo "<h3>Please Login To View Your Cart</h3>";
                 echo "</div>";
             echo "</div>";
         echo "</body>";

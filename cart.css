@@ -30,6 +30,12 @@
     font-family: 'Abril Fatface', cursive;
 }
 
+.productsSection h3
+{
+    color:#000000;
+    font-family: 'Playfair Display', serif;
+}
+
 .shoppingCart 
 {
     width: 90%;

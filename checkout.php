@@ -23,10 +23,10 @@
 
         $loggedUser = $_SESSION["user_id"];
 
-        if (isset($_POST['card'])) 
+        if (isset($_POST['card']))
             echo "<script>window.location.href='payment.php?user=$loggedUser&payment=card';</script>";
 
-        if (isset($_POST['cash'])) 
+        if (isset($_POST['cash']))
             echo "<script>window.location.href='payment.php?user=$loggedUser&payment=cash';</script>";
     }
 
