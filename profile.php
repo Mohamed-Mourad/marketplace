@@ -14,7 +14,28 @@
         echo "<link href=https://fonts.googleapis.com/icon?family=Material+Icons rel=stylesheet>";
     echo "</head>";
 
-    generateProfile();
+    generatePage();
+
+    function generatePage()
+    {
+        generateProfile();
+        if(isset($_POST['submit']))
+        {
+            $uid = $_SESSION['user_id'];
+            $username = $_POST["username"];
+            $password = $_POST["password"];
+            $fullName = $_POST["name"];
+            $address = $_POST["address"];
+            $location = $_POST["location"];
+            $phoneNumber = $_POST["phoneNumber"];
+
+            $connection = mysqli_connect("localhost", "root", "12345678", "marketplace");
+            if(mysqli_query($connection, "update customers set user_name='$username', passw='$password', fullname='$fullName', addr='$address', locat='$location', phone_number='$phoneNumber' WHERE user_id='$uid'"))
+                echo "<script>Update Profile</script>";
+            mysqli_close($connection);
+        }
+
+    }
 
     function generateProfile(){
         echo "<body>";

@@ -12,9 +12,8 @@
     echo "<head>";
     echo "<title>Log In</title>";
     echo "</head>";
-
+    
     echo "<body>";
-        
         generateNavbar();
 
         echo "<div class=container>";
@@ -52,9 +51,8 @@
         echo "</div>";
     echo "</body>";
 
-    if(isset($_POST['submit'])){
+    if(isset($_POST['submit']))
         login();
-    }
 
     function login(){
         $username = $_POST["username"];
@@ -63,11 +61,14 @@
 
         $connection = mysqli_connect("localhost", "root", "12345678", "marketplace");
         
-        if($userType == 'Customer'){
+        if($userType == 'Customer')
+        {
             $QLogin = mysqli_query($connection, "SELECT * FROM customers WHERE user_name = '$username'");
             $numReturnedRows = mysqli_num_rows($QLogin);
             $user = mysqli_fetch_array($QLogin);
-        }elseif($userType == "Market"){
+        }
+        elseif($userType == "Market")
+        {
             $QLogin = mysqli_query($connection, "SELECT * FROM markets WHERE market_name = '$username'");
             $numReturnedRows = mysqli_num_rows($QLogin);
             $user = mysqli_fetch_array($QLogin);
@@ -75,17 +76,22 @@
 
         mysqli_close($connection);
 
-        if($numReturnedRows > 0 & $user["passw"] == $password){
+        if($numReturnedRows > 0 & $user["passw"] == $password)
+        {
             $uid = $user["user_id"];
             $_SESSION['user_id'] = $uid;
             $_SESSION['user_type'] = $userType;
             echo "<script>window.location.href='home.php';</script>";
             exit;
-        }elseif($numReturnedRows > 0 & $user["passw"] != $password){
+        }
+        elseif($numReturnedRows > 0 & $user["passw"] != $password)
+        {
             echo '<script type ="text/JavaScript">';  
                 echo 'alert("Incorrect password! Please try again.")';  
             echo '</script>';
-        }elseif($numReturnedRows == 0){
+        }
+        elseif($numReturnedRows == 0)
+        {
             echo '<script type ="text/JavaScript">';
                 echo 'alert("Invalid username! please try again.")';  
             echo '</script>';

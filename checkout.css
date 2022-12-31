@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Playfair+Display&display=swap');
+
+.checkout_form
+{
+  text-align: center;
+  padding: 30px 30px;
+  border-radius: 20px;
+  height: fit-content;
+  margin: 10% 20% 10% 20%;
+  background-color: #F5F5F5;
+}
+
+h1
+{
+    color:#000000;
+    font-size: 40px;
+    letter-spacing: 3px;
+    font-family: 'Abril Fatface', cursive;
+}
+
+.checkout_form .details 
+{
+    width: 90%;
+    margin: auto;
+}
+
+.checkout_form .details .section
+{
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.checkout_form .details .section input[type="text"]
+{
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #dddddd;
+}
+
+input::placeholder 
+{
+    font-size: 15px;
+    font-family: 'Playfair Display', serif;
+}
+
+.item
+{
+    width: 48%;
+    float:left;
+    display:inline;
+}
+
+.placeholder 
+{
+    margin-left: 8%;
+}
+
+.checkout_form .details .btns
+{
+    padding-top: 60px;
+}
+
+.checkout_form .details .btns button
+{
+    border: none;
+    padding: 8px;
+    opacity: 0.9;
+    cursor: pointer;
+    display: block;
+    margin-top: 3%;
+    margin-right: 2%;
+    color: #FFFFFF;
+    font-weight: 400;
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+    display: inline-block;
+    background: #2A59A0;
+    justify-content: space-between;
+}
+
+.checkout_form .details .btns button:hover
+{
+    opacity: 1;
+}

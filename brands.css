@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Playfair+Display&display=swap');
+
+.brandsSection
+{
+    width: 90%;
+    height: auto;
+    margin: auto;
+    padding: 20px;
+    margin-top: 6%;
+    border-radius: 5px;
+    background-color: #F5F5F5;
+}
+
+.brandsSection h1
+{
+    color:#000000;
+    font-size: 40px;
+    letter-spacing: 3px;
+    font-family: 'Abril Fatface', cursive;
+}
+
+.details
+{
+    height:fit-content;
+    justify-content:space-evenly;
+}
+
+.details i
+{
+    color: grey;
+    padding-right: 5px;
+}
+
+.details i:hover
+{
+    color: red;
+    cursor: pointer;
+}

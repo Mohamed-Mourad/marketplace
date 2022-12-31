@@ -1,13 +1,11 @@
-<?php
-    session_start();
-?>
-
 <style>
     <?php include 'addProduct.css'; ?>
     <?php include 'navbar.php'; ?>
 </style>
 
 <?php
+
+    session_start();
 
     echo "<head>";
         echo "<link href=https://fonts.googleapis.com/icon?family=Material+Icons rel=stylesheet>";
@@ -18,8 +16,8 @@
     function generateAddProduct()
     {
         echo "<body>";
+            
             generateNavbar();
-
             echo "<div class=header>";
 
             echo "<div class=container>";
@@ -61,7 +59,7 @@
 
                                 foreach ($id as $key => $value) 
                                 {
-                                    $persist="INSERT INTO products(ProductID, Name, Image, Brand, MarketID, Price, Brief, InStock, BestSeller) values
+                                    $persist="insert into products(ProductID, Name, Image, Brand, MarketID, Price, Brief, InStock, BestSeller) values
                                     ('$value','$name[$key]','$images[$key]','$brand[$key]','$marketId','$price[$key]','$description[$key]','$stock[$key]','$bestSeller[$key]')";
                                     
                                     $saveProducts=mysqli_query($con,$persist);
@@ -112,7 +110,7 @@
                             echo "</tr>";
                         echo "<tbody>";
                     echo "</table>";
-                    echo "<button type=submit class=addToMarket name=addToMarket>Add To Market</button>";
+                echo "<button type=submit class=addToMarket name=addToMarket>Add To Market</button>";
                 echo "<form>";
             echo "</div>";
         echo "</body>";

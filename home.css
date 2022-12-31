@@ -8,14 +8,14 @@ body
     background-color: #F5F5F5;
 }
 
-body::-webkit-scrollbar
+body::-webkit-scrollbar 
 {
     width: 0.5rem;
 }
 
-body::-webkit-scrollbar-thumb
+body::-webkit-scrollbar-thumb 
 {
-    background: #2A59A0;
+    background: #302F53;
 }
 
 html
@@ -26,10 +26,12 @@ html
 .header
 {
     width: 100%;
-    height: 100vh;
+    min-height: 100%;
     background-size: 100%;
     padding: 20px 0px 0px;
+    max-height: fit-content;
     background-position: center;
+    background-repeat: no-repeat;
     background-image: url('productImages/dalle.jpg');
 }
 
@@ -38,17 +40,17 @@ html
     font-size: 60px;
     color:#F5F5F5;
     margin-top: 100px;
-    text-align: center;
     margin-bottom: 0px;
+    text-align: center;
     letter-spacing: 3px;
     font-family: 'Abril Fatface', cursive;
 }
 
 #slogan h3
 {
+    color:#F5F5F5;
     font-size: 25px;
     margin-top: 10px;
-    color:#F5F5F5;
     text-align: center;
     letter-spacing: 2px;
     font-family: 'Playfair Display', serif;
@@ -115,8 +117,8 @@ section h1
 
 .image
 {
-    padding-top: 10px;
     height: 55%;
+    padding-top: 10px;
 }
 
 img 
@@ -130,8 +132,8 @@ img
 {
     width: auto;
     height: 30%;
-    margin: 0px 10px 0px 10px;
     display: inline-block;
+    margin: 0px 10px 0px 10px;
     padding: 0px 10px 0px 10px;
     font-family: 'Playfair Display', serif;
 }
@@ -139,26 +141,26 @@ img
 .details h3
 {
     font-size: medium;
-    margin-bottom: 5px;
     padding-top: 10px;
+    margin-bottom: 5px;
     display:inline-block;
 }
 
 .details h5
 {
     margin-top: 0px;
-    margin-bottom: 0px;
     padding-top: 0px;
+    margin-bottom: 0px;
 }
 
 .details p
 {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    padding-top: 5px;
     color: #aaa;
     font-size: 14px;
+    margin-top: 0px;
+    padding-top: 5px;
 	line-height: 1.4;
+    margin-bottom: 0px;
 }
 
 .stockBuy
@@ -178,8 +180,9 @@ img
 
 .button 
 {
-    margin-top: 10px;
     float: right;
+    display: flex;
+    margin-top: 10px;
 }
 
 .button a 
@@ -194,6 +197,11 @@ img
     font-family: 'Playfair Display', serif;
 }
 
+.button a i
+{
+    font-size:16px;
+}
+
 .button a:nth-of-type(1) 
 {
     border-right: none;
@@ -202,5 +210,23 @@ img
 
 .button a:nth-of-type(2) 
 {
+    cursor: pointer;
+	border-radius: 0px 0px 0px 0;
+}
+
+.button a:nth-of-type(3)
+{
 	border-radius: 0px 10px 10px 0;
+}
+
+.button a:nth-of-type(2):hover
+{
+	transform: scale(1.05, 1.05);
+    -ms-transform: scale(1.05, 1.05); 
+    -webkit-transform: scale(1.05, 1.05);
+}
+
+.button a:nth-of-type(3) i:hover
+{
+    color: red;
 }

@@ -7,14 +7,15 @@
 
 <?php
 
+    session_start();
+
     echo "<head>";
         echo "<title>Sign Up</title>";
     echo "</head>";
 
     echo "<body>";
-
         generateNavbar();
-
+        
         echo "<div class=container>";
             echo "<div class='regContainer up'>";
                 echo "<h1>Sign Up</h1>";
@@ -252,9 +253,6 @@
             document.getElementById("location").required = false;
             document.getElementById("phoneNumber").required = true;
 
-            //document.getElementByClassName("customerInfo").required = true;
-            //document.getElementById("location").required = false;
-
             document.getElementById("username_market").required = false;
             document.getElementById("password_market").required = false;
             document.getElementById("confirmpassword_market").required = false;
@@ -263,8 +261,6 @@
             document.getElementById("balance_number_market").required = false;
             document.getElementById("paypal_market").required = false;
             document.getElementById("phoneNumber_market").required = false;
-
-            //document.getElementByClassName("marketInfo").required = false;
         }
 
         if(userType=='Market')
@@ -281,9 +277,6 @@
             document.getElementById("location").required = false;
             document.getElementById("phoneNumber").required = false;
 
-            //document.getElementByClassName("customerInfo").required = false;
-            //document.getElementById("location").required = false;
-
             document.getElementById("username_market").required = true;
             document.getElementById("password_market").required = true;
             document.getElementById("confirmpassword_market").required = true;
@@ -292,8 +285,6 @@
             document.getElementById("balance_number_market").required = true;
             document.getElementById("paypal_market").required = true;
             document.getElementById("phoneNumber_market").required = true;
-
-            //document.getElementByClassName("marketInfo").required = true;
         }
     });
     
