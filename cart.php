@@ -66,11 +66,15 @@
                                                 echo "<span>Brand: $brand</span>";
                                             echo "</div>";
                                     
-                                            echo "<div class=quantity>";
-                                                echo "<span>$$price</span>";
-                                                // echo "<button class=add name=button><i class='fas'>&#xf067;</i></button>";
-                                                // echo "<input type=text id=currentQtty name=name value=1>";
-                                                // echo "<button class=subtract name=button><i class='fas'>&#xf068;</i></button>";
+                                            echo "<div class=quantityAndPrice>";
+                                                echo "<div class=quantity>";
+                                                    echo "<span>$$price</span>";
+                                                echo "</div>";
+                                                echo "<div class=quantity>";
+                                                    echo "<button class=add name=button onclick=add($key)><i class='fas'>&#xf067;</i></button>";
+                                                    echo "<input type=text id=$key name=name value=1>";
+                                                    echo "<button class=subtract name=button onclick=subtract($key)><i class='fas'>&#xf068;</i></button>";
+                                                echo "</div>";
                                             echo "</div>";
                                         echo "</div>";
                                     echo "</div>";
@@ -90,11 +94,26 @@
 
 
 <script>
+
     function remove(key) 
     {
-        var remove =document.getElementById("item");
+        var remove = document.getElementById("item");
         remove.parentNode.removeChild(remove);
         document.cookie=key+"="+key+";max-age=0";
         window.location.reload();
     }
+
+    function add(key)
+    {
+        document.getElementById(key).value++;
+    }
+
+    function subtract(key)
+    {
+        if(document.getElementById(key).value == 0){
+            remove(key);
+        }else
+            document.getElementById(key).value--;
+    }
+
 </script>

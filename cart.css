@@ -127,14 +127,15 @@ img
     text-align: center;
 }
 
-button[class*=btn] 
+.add,
+.subtract
 {
     width: 30px;
     height: 30px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    background-color: #E1E8EE;
+    background-color: #2A59A0;
 }
 
 .checkout
