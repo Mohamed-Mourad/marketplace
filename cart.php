@@ -71,7 +71,7 @@
                                                     echo "<span>$$price</span>";
                                                 echo "</div>";
                                                 echo "<div class=quantity>";
-                                                    echo "<button class=add name=button onclick=add($key)><i class='fas'>&#xf067;</i></button>";
+                                                    echo "<button class=add name=button onclick=add($key,$stock)><i class='fas'>&#xf067;</i></button>";
                                                     echo "<input type=text id=$key name=name value=1>";
                                                     echo "<button class=subtract name=button onclick=subtract($key)><i class='fas'>&#xf068;</i></button>";
                                                 echo "</div>";
@@ -103,9 +103,12 @@
         window.location.reload();
     }
 
-    function add(key)
+    function add(key, stock)
     {
-        document.getElementById(key).value++;
+        if(document.getElementById(key).value < stock){
+            document.getElementById(key).value++;
+        }else
+            alert("Sorry! no more stock available for this product.")
     }
 
     function subtract(key)
