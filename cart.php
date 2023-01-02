@@ -35,9 +35,17 @@
 
                         foreach($_COOKIE as $key => $value)
                         {
-                            if($value == "productID")
-                            {
-                                $inCart=mysqli_query($con, "select * from products where ProductID='$key'");
+                            $product = json_decode($value);
+                            $pid = $product->productID;
+                            $quantity = $product->quantity;
+
+                            echo '<script type ="text/JavaScript">';  
+                                echo "console.log('$value')";
+                            echo '</script>';
+
+                            //if($key == "productID")
+                            //{
+                                $inCart=mysqli_query($con, "select * from products where ProductID='$pid'");
                                 while($row=mysqli_fetch_assoc($inCart))
                                 {
                                     $name=$row["Name"];
@@ -54,7 +62,7 @@
                                         echo "<div class=item id=item>";
 
                                             echo "<div class=delete>";
-                                                echo "<button class=deleteButton onclick=remove($key)><i class=material-icons>&#xe872;</i></button>";
+                                                echo "<button class=deleteButton onclick=remove($pid)><i class=material-icons>&#xe872;</i></button>";
                                             echo "</div>";
                                     
                                             echo "<div class=image>";
@@ -71,15 +79,15 @@
                                                     echo "<span>$$price</span>";
                                                 echo "</div>";
                                                 echo "<div class=quantity>";
-                                                    echo "<button class=add name=button onclick=add($key,$stock)><i class='fas'>&#xf067;</i></button>";
-                                                    echo "<input type=text id=$key name=name value=1>";
-                                                    echo "<button class=subtract name=button onclick=subtract($key)><i class='fas'>&#xf068;</i></button>";
+                                                    echo "<button class=add name=button onclick=add($pid,$quantity,$stock)><i class='fas'>&#xf067;</i></button>";
+                                                    echo "<input type=text id=$pid name=name value=$quantity>";
+                                                    echo "<button class=subtract name=button onclick=subtract($pid,$quantity)><i class='fas'>&#xf068;</i></button>";
                                                 echo "</div>";
                                             echo "</div>";
                                         echo "</div>";
                                     echo "</div>";
                                 }
-                            }
+                            //}
                         }
                         echo "<a href=checkout.php><button class=checkout>Check Out</button></a>";
                         echo "<a href=purchaseHistory.php><button class=purchaseHistory>Previous Orders</button></a>";
@@ -95,28 +103,49 @@
 
 <script>
 
-    function remove(key) 
+    function remove(pid) 
     {
         var remove = document.getElementById("item");
         remove.parentNode.removeChild(remove);
-        document.cookie=key+"="+key+";max-age=0";
+        document.cookie=pid+"="+pid+";max-age=0";
         window.location.reload();
     }
 
-    function add(key, stock)
+    function add(pid, quantity, stock)
     {
-        if(document.getElementById(key).value < stock){
-            document.getElementById(key).value++;
+        if(document.getElementById(pid).value < stock){
+            document.getElementById(pid).value++;
+
+            quantity++;
+            var productToAdd = {};
+            productToAdd.productID = pid;
+            productToAdd.quantity = quantity;
+
+            var productToAddString = JSON.stringify(productToAdd);
+            document.cookie = pid + "=" + productToAddString;
+
+            window.location.reload();
         }else
             alert("Sorry! no more stock available for this product.")
     }
 
-    function subtract(key)
+    function subtract(pid, quantity)
     {
-        if(document.getElementById(key).value == 0){
-            remove(key);
-        }else
-            document.getElementById(key).value--;
+        if(document.getElementById(pid).value == 1){
+            remove(pid);
+        }else{
+            document.getElementById(pid).value--;
+
+            quantity--;
+            var productToAdd = {};
+            productToAdd.productID = pid;
+            productToAdd.quantity = quantity;
+
+            var productToAddString = JSON.stringify(productToAdd);
+            document.cookie = pid + "=" + productToAddString;
+
+            window.location.reload();
+        }
     }
 
 </script>

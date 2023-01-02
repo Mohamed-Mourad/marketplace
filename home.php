@@ -97,7 +97,13 @@
 
     function addToCart(productId)
     {
-        document.cookie = productId + "=productID";  
+        var productToAdd = {};
+        productToAdd.productID = productId;
+        productToAdd.quantity = 1;
+
+        var productToAddString = JSON.stringify(productToAdd);
+        document.cookie = productId + "=" + productToAddString;
+
         alert('Item Added To Cart!');
     }
 </script>
