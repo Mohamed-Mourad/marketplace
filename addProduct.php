@@ -17,7 +17,11 @@
     {
         echo "<body>";
             
+        if(($_SESSION['user_type'] == "Market") && isset($_SESSION['user_type']))
+            generateMarketNavbar();
+        else
             generateNavbar();
+            
             echo "<div class=header>";
 
             echo "<div class=container>";

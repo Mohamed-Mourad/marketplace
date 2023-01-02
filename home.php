@@ -75,7 +75,7 @@
                             echo "</div>";
 
                             echo "<div class=stockBuy>";
-                                echo "<h5>Quantity In Stock: $stock</h5>";
+                                echo "<h5>Stock: $stock</h5>";
                                 echo "<div class=button>";
                                     echo "<a>$$price</a><a onclick=addToCart($productId)>Buy Now</a><a href=likeProduct.php?user=$loggedUser&product=$productId onclick=like()><i class=fas>&#xf004;</i></a><br>";
                                 echo "</div>";

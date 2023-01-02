@@ -79,7 +79,7 @@
                     $user = mysqli_fetch_array($getProfilePicture);
                     
                     echo "<div class=profilePicture>";
-                        echo "<li><a href=profile.php><img src='uploads/$user[profile_picture]' class=profilePicture></a></li>";
+                        echo "<li><a href=profile.php><img src='uploads/$user[profile_picture]'></a></li>";
                     echo "</div>";
                     
                     mysqli_close($connection);

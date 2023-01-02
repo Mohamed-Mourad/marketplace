@@ -61,7 +61,7 @@
 
         $connection = mysqli_connect("localhost", "root", "12345678", "marketplace");
         
-        if($userType == 'Customer')
+        if($userType == "Customer")
         {
             $QLogin = mysqli_query($connection, "SELECT * FROM customers WHERE user_name = '$username'");
             $numReturnedRows = mysqli_num_rows($QLogin);
